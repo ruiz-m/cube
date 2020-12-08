@@ -1,11 +1,11 @@
 app: display.o main.o
-	gcc -o ./app display.o main.o -lSDL2main -lSDL2 -lm
+	gcc -o bin/app bin/display.o bin/main.o -lSDL2main -lSDL2 -lm
 
-display.o: display.c
-	gcc -c display.c
+display.o: src/display.c
+	gcc -o bin/display.o -c src/display.c
 
-main.o: main.c
-	gcc -c main.c
+main.o: src/main.c
+	gcc -o bin/main.o -c src/main.c
 
 clean:
-	rm *.o app
+	rm bin/*
